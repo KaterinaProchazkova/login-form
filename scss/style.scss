@@ -1,0 +1,144 @@
+html {
+    box-sizing: border-box;
+}
+  
+*, ::before, ::after {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: montserrat;
+    background: linear-gradient(120deg, #fff, #ffaea0) no-repeat center/cover;
+    height: 100vh; //100% šířka stránky 
+    //overflow: hidden;
+}
+
+.card {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    background-color: #fff;
+    border-radius: 10px;
+
+    &__title {
+        text-align: center;
+        padding: 0 0 20px 0;
+        border-bottom: 1px solid #e9e9e9;
+    }
+
+    &__text {
+        display: block;
+        text-align: center;
+        margin: 30px 0 35px 0;
+        color: silver;
+        font-size: 15px;
+    }
+
+    &__link {
+        color: black;
+        text-decoration: none;
+
+        &:hover {
+            color: tomato;
+            transition: .3s;
+        }
+    }
+}
+
+.form {
+    padding: 0 40px;
+
+    &__field {
+        position: relative;
+        border-bottom: 2px solid rgb(226, 226, 226);
+        margin: 30px 0;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: 0;
+            width: 0%;
+            height: 2px;
+            background-color:tomato;
+            transition: .5s;
+        }
+    }
+
+    &__input {
+        width: 100%;
+        padding: 0 5px;
+        height: 40px;
+        font-size: 16px;
+        border: none;
+        background-color: none;
+        outline: none;
+
+        &:focus ~ .form__label,
+        &:valid ~ .form__label {
+            top: -5px;
+            color: tomato;
+            font-size: 14px;
+        }
+
+        &:focus ~ .form__border::before,
+        &:valid ~ .form__border::before {
+            width: 100%;
+        }
+    }
+
+    &__label {
+        position: absolute;
+        top:50%;
+        left: 5px;
+        color: black;
+        transform: translateY(-50%);
+        font-size: 16px;
+        pointer-events: none;
+        transition: .5s;
+    }
+
+    &__border::before {
+        content: '';
+        position: absolute;
+        top: 40px;
+        left: 0;
+        width: 0%;
+        height: 2px;
+        background-color:tomato;
+        transition: .5s;
+    }
+    &__password {
+        display: block;
+        margin: 0 0 20px 5px;
+        color: silver;
+        text-decoration: none;
+
+        &:hover {
+            color: tomato;
+            text-decoration: underline;
+            transition: .3s;
+        }
+    }
+
+    &__btn {
+        padding: 10px 25px;
+        border: 2px solid tomato;
+        background-color: #ffaea0;
+        border-radius: 10px;
+        font-size: 18px;
+        color: black;
+        font-weight: 600;
+        cursor: pointer;
+        outline: none;
+
+        &:hover {
+            background-color: tomato;
+            transition: .5s;
+        }
+    }
+}
